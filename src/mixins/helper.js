@@ -16,5 +16,4 @@ export function handleDigitConcat(aNum, nNum) {
     } else {
         return actualNumber + newNumber;
     }
-
 }

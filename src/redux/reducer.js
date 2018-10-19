@@ -5,7 +5,7 @@ import {handleDigitConcat} from '../mixins/helper';
 const initialState = {
     acc: null,
     operation: null,
-    number: 0,
+    number: '0',
 };
 
 export default function (state = initialState, action) {

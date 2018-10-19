@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Button from './Button';
 
@@ -15,7 +16,6 @@ class Operations extends React.Component {
     }
 
     render() {
-
         let operations = [];
 
         for (let op of ['-', '+', '/', '*']) {
@@ -29,5 +29,10 @@ class Operations extends React.Component {
         );
     }
 }
+
+Operations.propTypes = {
+    onClick: PropTypes.func.isRequired
+};
+
 
 export default Operations;

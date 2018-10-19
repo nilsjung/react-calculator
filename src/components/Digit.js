@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 class Digit extends Button {
@@ -10,14 +11,15 @@ class Digit extends Button {
 
 class DigitField extends React.Component {
     handleDigitField = (value) => () => {
-        return this.props.onClick(value)
+        return this.props.onClick(value);
     }
 
     render() {
         let digits = [];
 
         for (let num of [1, 2, 3, 4, 5, 6, 7, 8, 9]) {
-            digits.push(<Digit key={num} value={num.toString()} onClick={this.handleDigitField(num)} />);
+            const number = num.toString();
+            digits.push(<Digit key={num} value={number} onClick={this.handleDigitField(number)} />);
         }
 
         return (
@@ -27,5 +29,10 @@ class DigitField extends React.Component {
         );
     }
 }
+
+DigitField.propTypes = {
+    onClick: PropTypes.func.isRequired,
+};
+
 
 export default DigitField;

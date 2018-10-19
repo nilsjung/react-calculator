@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
 import {connect} from 'react-redux';
-
 import { bindActionCreators } from 'redux';
-
+import PropTypes from 'prop-types';
 import * as actions from './redux/actions';
 
 import Display from './components/Display';
@@ -16,7 +15,7 @@ class App extends Component {
 
         return (
             <div className="App container">
-                <Display acc='acc' operation={this.props.operation} input={this.props.number}></Display>
+                <Display acc='acc' operation={this.props.operation} number={this.props.number}></Display>
                 <div className='row'>
                     <span className='col-8'>
                         <DigitField onClick={addDigit}/>
@@ -44,5 +43,14 @@ function mapDispatchToProps(dispatch) {
         addDigit: actions.addDigit,
     }, dispatch);
 }
+
+App.propTypes = {
+    operation: PropTypes.string,
+    number: PropTypes.string.isRequired,
+    acc: PropTypes.string,
+    addDigit: PropTypes.func.isRequired,
+    addOperation: PropTypes.func.addOperation
+};
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

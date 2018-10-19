@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Field extends React.Component {
     render() {
@@ -13,6 +14,11 @@ class Field extends React.Component {
     }
 }
 
+Field.propTypes = {
+    className: PropTypes.string,
+    value: PropTypes.string,
+};
+
 /**
  * Display Component
  *
@@ -22,14 +28,20 @@ class Display extends React.Component {
         return (
             <div className='container'>
                 <div className='row'>
-                    <Field className="col-10" value={this.props.acc} />
+                    <Field className="col-10" value={this.props.number} />
                     <Field className="col-2" value={this.props.operation} /></div>
                 <div className='row justify-content-end'>
-                    <Field value={this.props.input} />
+                    <Field value={this.props.acc} />
                 </div>
             </div>
         );
     }
 }
+
+Display.propTypes = {
+    number: PropTypes.string.isRequired,
+    operation: PropTypes.string,
+    acc: PropTypes.string,
+};
 
 export default Display;
