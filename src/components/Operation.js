@@ -11,7 +11,7 @@ class OperationField extends Button {
 
 class Operations extends React.Component {
     handleOperation = (operator) => () => {
-        console.log('operation clicked: ', operator);
+        this.props.onClick(operator);
     }
 
     render() {

@@ -12,17 +12,17 @@ import OperationField from './components/Operation';
 
 class App extends Component {
     render() {
-        const {addDigit} = this.props;
+        const {addDigit, addOperation} = this.props;
 
         return (
             <div className="App container">
-                <Display acc='acc' operation='op' input={this.props.number}></Display>
+                <Display acc='acc' operation={this.props.operation} input={this.props.number}></Display>
                 <div className='row'>
                     <span className='col-8'>
                         <DigitField onClick={addDigit}/>
                     </span>
                     <span className='col-4'>
-                        <OperationField />
+                        <OperationField onClick={addOperation}/>
                     </span>
                 </div>
             </div>
@@ -34,13 +34,13 @@ function mapStateToProps(state) {
     return {
         number : state.number,
         acc: state.acc,
-        op: state.op
+        operation: state.operation
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        add: actions.add,
+        addOperation: actions.addOperation,
         addDigit: actions.addDigit,
     }, dispatch);
 }

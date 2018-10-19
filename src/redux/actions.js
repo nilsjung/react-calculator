@@ -1,22 +1,9 @@
-export const ADD = 'add';
-export const DIV = 'devide';
-export const MULT = 'multiplicate';
-export const SUB = 'subtract';
+export const ADD_OPERATION = 'addOperation';
 export const DIGIT = 'digit';
 
-export const add = () => ({
-    type: ADD
-});
-
-export const sub = () => ({
-    type: SUB
-});
-export const div = () => ({
-    type: DIV
-});
-
-export const mult = () => ({
-    type: MULT
+export const addOperation = (operation) => ({
+    type: ADD_OPERATION,
+    payload: operation
 });
 
 export const addDigit = (digit) => ({
