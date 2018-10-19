@@ -18,7 +18,7 @@ class App extends Component {
                 <Display acc={this.props.acc} operation={this.props.operation} number={this.props.number}></Display>
                 <div className='row'>
                     <span className='col-8'>
-                        <DigitField onClick={addDigit}/>
+                        <DigitField onReset={this.props.reset} onClick={addDigit}/>
                     </span>
                     <span className='col-4'>
                         <OperationField onEquationClick={calculate} onClick={addOperation}/>
@@ -41,7 +41,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         addOperation: actions.addOperation,
         addDigit: actions.addDigit,
-        calculate: actions.calculate
+        calculate: actions.calculate,
+        reset: actions.reset,
     }, dispatch);
 }
 

@@ -9,7 +9,7 @@ class Field extends React.Component {
 
         const className = this.props.className || 'col';
         return (
-            <span className={className} style={style}>{this.props.value}</span>
+            <span className={className} style={style}>{this.props.value || '--- nothing to show ---'}</span>
         );
     }
 }

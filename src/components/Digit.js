@@ -5,13 +5,16 @@ import Button from './Button';
 class Digit extends Button {
     constructor(props) {
         super(props);
-        this.onClick = props.onClick;
     }
 }
 
 class DigitField extends React.Component {
     handleDigitField = (value) => () => {
         return this.props.onClick(value);
+    }
+
+    handleReset = () => () => {
+        return this.props.onReset();
     }
 
     render() {
@@ -23,8 +26,13 @@ class DigitField extends React.Component {
         }
 
         return (
-            <div className="d-flex flex-row">
-                {digits}
+            <div>
+                <div className="d-flex flex-row">
+                    {digits}
+                </div>
+                <div>
+                    <Button onClick={this.handleReset()} value={'C'} />
+                </div>
             </div>
         );
     }

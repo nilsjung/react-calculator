@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class Button extends React.Component {
     constructor(props) {
         super(props);
-        this.style = props.style;
+        this.onClick = props.onClick;
     }
 
     render() {

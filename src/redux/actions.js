@@ -1,6 +1,7 @@
 export const ADD_OPERATION = 'addOperation';
 export const DIGIT = 'digit';
 export const CALCULATE = 'calculate';
+export const RESET = 'reset';
 
 export const addOperation = (operation) => ({
     type: ADD_OPERATION,
@@ -14,4 +15,8 @@ export const addDigit = (digit) => ({
 
 export const calculate = () => ({
     type: CALCULATE
+});
+
+export const reset = () => ({
+    type: RESET
 });

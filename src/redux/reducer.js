@@ -54,6 +54,11 @@ const calculateResult = (state) => {
     return {...state, acc: result, number: '0'};
 };
 
+const resetHandler = (state) => {
+    console.log('resetHanlder')
+    return initialState;
+};
+
 /**
  * the default main reducer.
  * @param {Object} state the current state
@@ -68,6 +73,9 @@ export default function (state = initialState, action) {
         return addOperationHandler(state, payload);
     } else if (type === operation.CALCULATE) {
         return calculateResult(state);
+    } else if (type === operation.RESET) {
+        console.log('reset')
+        return resetHandler(state);
     }
 
     return state;

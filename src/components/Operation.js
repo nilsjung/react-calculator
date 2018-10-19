@@ -6,7 +6,6 @@ import Button from './Button';
 class OperationField extends Button {
     constructor(props) {
         super(props);
-        this.onClick = props.onClick;
     }
 }
 
