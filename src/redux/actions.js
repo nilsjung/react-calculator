@@ -1,5 +1,6 @@
 export const ADD_OPERATION = 'addOperation';
 export const DIGIT = 'digit';
+export const CALCULATE = 'calculate';
 
 export const addOperation = (operation) => ({
     type: ADD_OPERATION,
@@ -9,4 +10,8 @@ export const addOperation = (operation) => ({
 export const addDigit = (digit) => ({
     type: DIGIT,
     payload: digit
+});
+
+export const calculate = () => ({
+    type: CALCULATE
 });

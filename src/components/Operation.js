@@ -15,6 +15,10 @@ class Operations extends React.Component {
         this.props.onClick(operator);
     }
 
+    handleEquationField = () => () => {
+        this.props.onEquationClick();
+    }
+
     render() {
         let operations = [];
 
@@ -25,13 +29,15 @@ class Operations extends React.Component {
         return (
             <div>
                 {operations}
+                <OperationField onClick={this.handleEquationField()} value='=' />
             </div>
         );
     }
 }
 
 Operations.propTypes = {
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
+    onEquationClick: PropTypes.func
 };
 
 
